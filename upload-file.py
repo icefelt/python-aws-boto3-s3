@@ -25,3 +25,14 @@ def upload_file(file_name, bucket, object_name=None):
         logging.error(e)
         return False
     return True
+
+
+"""
+The upload_fileobj method accepts a readable file-like object. 
+The file object must be opened in binary mode, not text mode.
+
+s3 = boto3.client('s3')
+with open("FILE_NAME", "rb") as f:
+    s3.upload_fileobj(f, "BUCKET_NAME", "OBJECT_NAME")
+
+"""
